@@ -317,6 +317,35 @@ cursor: pointer;
 }
 
 
+.sec-bar {
+width: 10%;
+height: 100%;
+background-color: var(--font-color);
+position: absolute;
+top: 0;
+/* left: -10%; */
+}
+
+.sec-bar .icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-color: var(--font-color);
+    left: 100%;
+    top: 8%;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sec-bar .icon span {
+    font-size: large;
+}
+
+.sec-bar .icon:hover {
+    cursor: pointer;
+}
 
 
 /* .test {
