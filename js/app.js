@@ -1,9 +1,43 @@
 'use strict';
 
 
-let secNav = document.querySelectorAll('.sec-nav div');
+let theme = localStorage.getItem('theme-color');
+let secNav = document.querySelectorAll('.sec-bar .colors div');
+let body = document.querySelector('body');
 
-console.log(secNav);
+if(theme) {
+    document.querySelectorAll('.sec-bar .colors div');
+    body.style.color = theme ;
+    secNav.forEach(div => {
+        if(div.dataset.color == theme){
+            div.classList.add('selected');
+        }
+    });
+}
+
+secNav.forEach(div => {   
+    div.addEventListener('click', (e) => {
+        localStorage.setItem('theme-color',e.target.dataset.color);
+            body.style.color = e.target.dataset.color;
+            secNav.forEach(div => {
+                div.classList.remove('selected');
+            });
+            div.classList.toggle('selected');
+        });
+    });
+
+
+
+
+
+let icon = document.querySelector('.sec-bar .icon');
+icon.addEventListener('click', () => {
+    console.log(icon.parentElement);
+         icon.parentElement.classList.toggle('show');
+});
+
+
+
 
 
 
