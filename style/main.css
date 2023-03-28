@@ -288,27 +288,43 @@ main .contact .container .personal-info div:nth-child(2) {
 cursor: pointer;
 }
 .sec-nav div:hover::after {
-    content: 'Home';
     width: 40px;
     height: 15px;
     color: #434242;
     font-size: x-small;
     text-align: center;
     padding-top: 3px;
-    background-color: whitesmoke;
+    background-color: lightblue;
     position: absolute;
     transform: translate(-100%,-100%);
     left: 5%;
     top: -4px;
     border-radius: 5px;
     transition-duration: 0.5s;
+}
+.sec-nav div:nth-child(1):hover::after {
+    content: 'Home';
+}
+.sec-nav div:nth-child(2):hover::after {
+    content: 'Skills';
+
+
+}
+.sec-nav div:nth-child(3):hover::after {
+    content: 'Portfolio';
+
+
+}
+.sec-nav div:nth-child(4):hover::after {
+    content: 'About';
+
 
 }
 .sec-nav div:hover::before { 
     content: "";
     width: 10px;
     height: 5px;
-    background-color: whitesmoke;
+    background-color: lightblue;
     position: absolute;
     transform: translate(-100%, -100%);
     left: 10%;
@@ -322,7 +338,7 @@ cursor: pointer;
 width: 150px;
 height: 100%;
 background-color: var(--font-color);
-position: absolute;
+position: fixed;
 top: 0;
 left: -150px;
 display: flex;
@@ -341,10 +357,12 @@ transition: 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s;
 }
 
 .sec-bar .icon span {
     font-size: large;
+    transition: 0.5s;
 }
 
 .sec-bar .icon:hover {
@@ -396,6 +414,31 @@ transition: 0.5s;
     left: 0;
 }
 
+.rotation {
+    transform: rotate(360deg);
+}
+
+
+.pic-selector > h5 {
+    text-align: center;
+}
+.pic-selector > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    margin: 10px;
+    border-radius: 4px;
+} 
+.pic-selector > div span {
+    padding: 3px;
+
+    border: black solid 2px;
+}
+.pic-selector > div span:hover {
+    cursor: pointer;
+} 
 
 /* .test {
     width: 400px;

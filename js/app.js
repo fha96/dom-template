@@ -32,12 +32,42 @@ secNav.forEach(div => {
 
 let icon = document.querySelector('.sec-bar .icon');
 icon.addEventListener('click', () => {
-    console.log(icon.parentElement);
          icon.parentElement.classList.toggle('show');
+         icon.children[0].classList.toggle('rotation');
 });
 
 
+let landing = document.querySelector('header');
 
+function startRandom(state) {
+    let x = 1; 
+    if(state){
+        setInterval(() => {
+            console.log('inside interval');
+            if(x <= 3){
+                landing.style.backgroundImage = `url(../assets/${x}.jpg)`;
+                x++;
+            } else {
+                x=1;
+            }
+        },2000)
+    } else {
+        clearInterval(1);
+        landing.style.backgroundImage = `url(../assets/${x}.jpg)`
+    }
+}
+
+let selectors = document.querySelectorAll('.pic-selector div span');
+
+selectors.forEach((span) => {
+    span.addEventListener('click',(e) => {
+        if(e.target.dataset.pic === 'dynamic'){
+            startRandom(true);
+        } else {
+            startRandom(false);
+        }
+    })
+})
 
 
 
